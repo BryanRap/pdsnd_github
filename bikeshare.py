@@ -41,7 +41,7 @@ def get_filters():
 
     # Get user input for the city to analyize, loop until the city entered is confirmed to be in the list, otherwise prompt an error and try again
     while True:
-        city = input('Lets get started by picking the city to explore, you can choose from "chicago", "new york city", or "washington", enter one of them: ')
+        city = input('Lets get started by picking the city to explore, you can choose from "Chicago", "New York City", or "Washington", enter one of them: ')
         print()
         if city.lower() in city_list:
             break
@@ -134,12 +134,20 @@ def time_stats(df):
     # Prints the most common start hour
     hour_list = df['Hour'].value_counts().keys().tolist()
     most_common_hour = hour_list[0]
-    print('The most common time to travel is: ', most_common_hour, ':00 hours')
+    print('The most common time to travel is {}:00 hours'.format(most_common_hour))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % (time.time() - start_time), '\n')
     print('-'*40)
+<<<<<<< HEAD
 
     input('Please press enter to continue...')
+||||||| merged common ancestors
+
+    input('Please press enter to continue...')
+=======
+
+    input('\nPlease press enter to continue...')
+>>>>>>> refactoring
 
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
@@ -163,12 +171,20 @@ def station_stats(df):
 
     # Prints a statement indicating the which is the most common Start/End combo and the number of trips taken
     print('\nThe most common combination of Start and End Stations are: ')
-    print('Start Station: {} & End Station: {} with {} trips completed'.format(most_trips.iloc[0]['Start Station'], most_trips.iloc[0]['End Station'], most_trips.iloc[0]['Count']))
+    print('Start Station: {} \nEnd Station: {} \nwith {} trips completed'.format(most_trips.iloc[0]['Start Station'], most_trips.iloc[0]['End Station'], most_trips.iloc[0]['Count']))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % (time.time() - start_time),'\n')
     print('-'*40)
+<<<<<<< HEAD
 
     input('Please press enter to continue...')
+||||||| merged common ancestors
+
+    input('Please press enter to continue...')
+=======
+
+    input('\nPlease press enter to continue...')
+>>>>>>> refactoring
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
@@ -198,7 +214,7 @@ def trip_duration_stats(df):
     if years > 0:
         print('The cumulative trip time is {} years, {} days, {} hours, and {} min!'.format(years, days, hours, minutes))
     elif days > 0:
-        print('The cumulative trip time is {} days, {} hours, and {} min!\n'.format(days, hours, minutes))
+        print('The cumulative trip time is {} days, {} hours, and {} min!'.format(days, hours, minutes))
     else:
         print('The cumulative trip time is {} hours and {} minutes!'.format(hours, minutes))
 
@@ -212,10 +228,10 @@ def trip_duration_stats(df):
     # Print the average trip time in minutes and seconds
     print('The average trip time is {} minutes and {} seconds!'.format(avg_min, avg_sec))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % (time.time() - start_time),'\n')
     print('-'*40)
 
-    input('Please press enter to continue...')
+    input('\nPlease press enter to continue...')
 
 def user_stats(df):
     """Displays statistics on bikeshare users, checks to confirm data is available before outputting."""
@@ -240,10 +256,10 @@ def user_stats(df):
     except:
         print("\nOops, looks like there is no data for gender or birth year, moving on!")
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % (time.time() - start_time),'\n')
     print('-'*40)
 
-    input('Please press enter to continue...')
+    input('\nPlease press enter to continue...')
 
 def raw_data_output(df):
     """Displays raw data from the csv files, prompts user for how much information to display"""
@@ -253,7 +269,7 @@ def raw_data_output(df):
     while True:
         print(df.iloc[x:x+5])
         more_data = input('Do you want to see more data? (y/n)')
-        if more_data == 'y':
+        if more_data.lower() == 'y':
             x += 5
             print()
         else:
@@ -270,8 +286,8 @@ def main():
         user_stats(df)
         raw_data_output(df)
 
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
+        restart = input('\nWould you like to restart? (y/n).\n')
+        if restart.lower() != 'y':
             break
 
 
