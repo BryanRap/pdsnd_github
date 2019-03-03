@@ -1,15 +1,19 @@
 ### Date created
-Include the date you created this project and README file.
+Project created on Mar 3, 2019
 
 ### Project Title
-Replace the Project Title
+Udacity Version Control Project
 
 ### Description
-Describe what your project is about and what it does
+Bikeshare data from 3 cities is analyzed to understand usage patterns and statistics.
+Users are asked to choose from a city and then pick any filters (months and/or days)
+and then interesting statistics about the usage are displayed
 
 ### Files used
-Include the files used
+bikeshare.py
+chicago.csv
+new_york_city.csv
+washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Created by Bryan Rapati as part of Udacity's Programming for Data Science Project
