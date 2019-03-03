@@ -118,12 +118,12 @@ def time_stats(df):
     # Prints the most common start hour
     hour_list = df['Hour'].value_counts().keys().tolist()
     most_common_hour = hour_list[0]
-    print('The most common time to travel is: ', most_common_hour, ':00 hours')
+    print('The most common time to travel is {}:00 hours'.format(most_common_hour))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % (time.time() - start_time), '\n')
     print('-'*40)
 
-    input('Please press enter to continue...')
+    input('\nPlease press enter to continue...')
 
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
@@ -147,12 +147,12 @@ def station_stats(df):
 
     # Prints a statement indicating the which is the most common Start/End combo and the number of trips taken
     print('\nThe most common combination of Start and End Stations are: ')
-    print('Start Station: {} & End Station: {} with {} trips completed'.format(most_trips.iloc[0]['Start Station'], most_trips.iloc[0]['End Station'], most_trips.iloc[0]['Count']))
+    print('Start Station: {} \nEnd Station: {} \nwith {} trips completed'.format(most_trips.iloc[0]['Start Station'], most_trips.iloc[0]['End Station'], most_trips.iloc[0]['Count']))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % (time.time() - start_time),'\n')
     print('-'*40)
 
-    input('Please press enter to continue...')
+    input('\nPlease press enter to continue...')
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
@@ -182,7 +182,7 @@ def trip_duration_stats(df):
     if years > 0:
         print('The cumulative trip time is {} years, {} days, {} hours, and {} min!'.format(years, days, hours, minutes))
     elif days > 0:
-        print('The cumulative trip time is {} days, {} hours, and {} min!\n'.format(days, hours, minutes))
+        print('The cumulative trip time is {} days, {} hours, and {} min!'.format(days, hours, minutes))
     else:
         print('The cumulative trip time is {} hours and {} minutes!'.format(hours, minutes))
 
@@ -196,10 +196,10 @@ def trip_duration_stats(df):
     # Print the average trip time in minutes and seconds
     print('The average trip time is {} minutes and {} seconds!'.format(avg_min, avg_sec))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % (time.time() - start_time),'\n')
     print('-'*40)
 
-    input('Please press enter to continue...')
+    input('\nPlease press enter to continue...')
 
 def user_stats(df):
     """Displays statistics on bikeshare users, checks to confirm data is available before outputting."""
@@ -224,10 +224,10 @@ def user_stats(df):
     except:
         print("\nOops, looks like there is no data for gender or birth year, moving on!")
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % (time.time() - start_time),'\n')
     print('-'*40)
 
-    input('Please press enter to continue...')
+    input('\nPlease press enter to continue...')
 
 def raw_data_output(df):
     """Displays raw data from the csv files, prompts user for how much information to display"""
