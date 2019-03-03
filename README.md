@@ -2,7 +2,7 @@
 Project created on Mar 3, 2019
 
 ### Project Title
-Udacity Version Control Project
+Python Bikeshare Project with Version Control
 
 ### Description
 Bikeshare data from 3 cities is analyzed to understand usage patterns and statistics.
